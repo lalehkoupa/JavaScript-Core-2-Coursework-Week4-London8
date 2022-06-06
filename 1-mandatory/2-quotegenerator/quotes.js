@@ -1,43 +1,9 @@
-// const quoteDiv = document.getElementById("quotes");
-// let ourQuote = document.createElement("p");
-
-// const randomQuote = pickFromArray(quotes);
-
-// ourQuote.innerText = `${randomQuote.quote}, said by ${randomQuote.author}`;
-
-// quoteDiv.append(ourQuote);
-
-// const ourButton = document.getElementById("button");
-// ourButton.addEventListener("click", () => {
-//   const typeYourNewThing = pickFromArray(quotes);
-//   ourQuote.innerText = `${typeYourNewThing.quote}, said by ${typeYourNewThing.author}`;
-// });
-
-// DO NOT EDIT BELOW HERE
-
-// A function which will return one item, at
-// random, from the given array.
-//
-// Parameters
-// ----------
-// choices: an array of items to pick from.
-//
-// Returns
-// -------
-// One item of the given array.
-//
-// Examples of use
-// ---------------
-// pickFromArray([1,2,3,4])     //maybe returns 2
-// pickFromArray(coloursArray)  //maybe returns "#F38630"
-//
 // You DO NOT need to understand how this function works.
 function pickFromArray(choices) {
   return choices[Math.floor(Math.random() * choices.length)];
 }
 
 // A list of quotes you can use in your app.
-// Feel free to edit them, and to add your own favourites.
 const quotes = [
   {
     quote: "Life isn’t about getting and having, it’s about giving and being.",
@@ -506,11 +472,21 @@ const quotes = [
   },
 ];
 let pEl = document.getElementById("quotes");
-let quoteObj = pickFromArray(quotes);
-pEl.innerText = `${quoteObj.quote}, said by ${quoteObj.author}`;
+let checkBox = document.getElementById("randomQuote");
+let myInterval;
+
+setQuoteText();
+
+function setQuoteText() {
+  let quoteObj = pickFromArray(quotes);
+  pEl.innerText = `${quoteObj.quote}, said by ${quoteObj.author}`;
+}
 
 const newQuoteBtn = document.getElementById("generateQuote");
-newQuoteBtn.addEventListener("click", () => {
-  quoteObj = pickFromArray(quotes);
-  pEl.innerText = `${quoteObj.quote}, said by ${quoteObj.author}`;
+newQuoteBtn.addEventListener("click", setQuoteText);
+
+checkBox.addEventListener("change", () => {
+  checkBox.checked
+    ? (myInterval = setInterval(setQuoteText, 5000))
+    : clearInterval(myInterval);
 });

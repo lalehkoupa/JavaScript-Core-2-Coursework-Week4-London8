@@ -40,14 +40,10 @@ image.src = images[counter].src;
 image.alt = images[counter].alt;
 
 //when forward button clicked
-forwardBtn.addEventListener("click", () => {
-  getForwardImages();
-});
+forwardBtn.addEventListener("click", getForwardImages);
 
 //when back button clicked
-backBtn.addEventListener("click", () => {
-  getBackImages();
-});
+backBtn.addEventListener("click", getBackImages);
 
 //when AutoForward button clicked
 autoForwardBtn.addEventListener("click", () => {

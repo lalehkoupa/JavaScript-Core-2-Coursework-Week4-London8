@@ -1,1 +1,56 @@
 /** Write your CSS in here **/
+
+.quoteContainer {
+  background-color: white;
+  margin: 2rem;
+  padding: 2rem;
+  color: rgb(243, 200, 136);
+}
+.mainContainer {
+  background-color: rgb(243, 200, 136);
+  width: 800px;
+  margin: 200px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.quoteContainer button {
+  background-color: rgb(243, 200, 136);
+  color: white;
+  border: 1px rgb(190, 139, 63) solid;
+  border-radius: 4px;
+  font-size: medium;
+}
+
+.randomQuote {
+  padding: 2rem;
+  color: white;
+  font-size: large;
+}
+/*remove blue border after clicking the button */
+.quoteContainer button:focus {
+  outline: 0 !important;
+}
+
+.randomQuote label {
+  padding: 0.4rem;
+}
+
+input[type="checkbox"]:checked:after {
+  content: "\2713";
+  color: white;
+}
+input[type="checkbox"] {
+  outline: 2px solid rgb(190, 139, 63);
+  outline-offset: 2px;
+  text-align: center;
+
+  vertical-align: text-top;
+  width: 20px !important;
+  height: 20px !important;
+  appearance: none;
+  border-radius: 10%;
+  box-shadow: none;
+  font-size: 1em;
+  padding: 0.2rem;
+}

@@ -11,10 +11,17 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="quoteContainer">
-      <p id="quotes"></p>
-      <button id="generateQuote">New Quote</button>
+    <div class="mainContainer">
+      <div id="quoteContainer" class="quoteContainer">
+        <p id="quotes"></p>
+        <button id="generateQuote">New Quote</button>
+      </div>
+      <div class="randomQuote">
+        <input type="checkbox" id="randomQuote" name="randomQuote" />
+        <label for="randomQuote"> Generate Random Quote</label><br />
+      </div>
     </div>
+
     <!-- Write your HTML in here -->
     <script src="quotes.js"></script>
   </body>
